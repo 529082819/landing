@@ -36,5 +36,55 @@
 
 3、大型项目（几个人一起做的）使用svn修改项目前注意要update，避免svn报错
 
-4、
+##<center>landing-v5.3.1.js的一些方法
+
+1、增加参数 extend=call_share   
+
+	作用是增加拨打电话以及分享的功能 (如果没有拨打电话和分享可不引用)
+	
+	例如:http://service.moxz.cn/landingjs/landing-v5.3.1.js?landingid=39hLlJ9RBjkzIC&pageid=index&extend=call_share
+	
+2、拨打电话方法
+
+	例：DomobLanding.ext.call.init('18090591207')
+	
+	注：该方法需要触发一个事件来引用
+	
+3、分享微博方法
+
+	例：
+	DomobLanding.ext.share.init({title:'',url:'',pic:''}).tencent(); 腾讯
+	DomobLanding.ext.share.init({title:'',url:'',pic:''}).douban(); 豆瓣
+	DomobLanding.ext.share.init({title:'',url:'',pic:''}).qzone(); qq空间
+	DomobLanding.ext.share.init({title:'',url:'',pic:''}).kaixin(); 开心
+	DomobLanding.ext.share.init({title:'',url:'',pic:''}).renren(); 人人	
+	
+	注：该方法需要触发一个事件来引用
+
+4、点击监测方法
+
+	DomobLanding.monitor.clk("tijiao");
+	
+	注：该方法需要触发一个事件来引用
+	
+5、收集注册数据方法
+
+	1、正常情况下：
+		DomobLanding.monitor.reg({
+			username:_username.value,
+			mobilenumber:_mobilenumber.value
+		 });
+	 
+	2、当一个项目（一个相同的landingid）有2个注册的时候：
+		DomobLanding.monitor.reg({
+			username:_username.value,
+			mobilenumber:_mobilenumber.value
+		},'','index');
+		DomobLanding.monitor.reg({
+			username:_username.value,
+			mobilenumber:_mobilenumber.value
+		},'','other');
+	 
+	
+	
 	

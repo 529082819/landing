@@ -4,3 +4,4 @@
 
 2、lading注意事项
 
+3、landing-v5.3.1.js的一些方法
